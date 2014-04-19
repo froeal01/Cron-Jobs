@@ -1,0 +1,8 @@
+<div class= "container">
+
+	<% @items.each do |item| %>
+		<%=  item.name %>
+		<%=  truncate("#{item.description}", length: 40) {link_to "Read More", item_path(item)} %><br>
+	<%  end %>
+
+</div>
