@@ -23,6 +23,7 @@ module Market76
 
     config.generators do |g|
         g.stylesheets false
+        g.migration false
         g.javascripts false
         g.test_framework :rspec, fixture: false
         g.template_engine false
