@@ -1,0 +1,7 @@
+<div class= "container">
+
+		<%=  @item.name %><br>
+		<%=  @item.description %><br>
+		<%=  "$#{@item.cost.to_f}"%><br>
+		<%=  link_to "Add to cart", add_to_order(@item.id) %>
+</div>
