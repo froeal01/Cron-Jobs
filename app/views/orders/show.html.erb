@@ -1,0 +1,10 @@
+<div class='container'>
+
+	<%  if @items_in_order.length > 1  %>
+		<%  @items_in_order.each do |cart_item|  %>
+		 <p><%= cart_item.item.name %><%= cart_item.quantity %><span>  <span><%=  calculate_cost(cart_item.quantity, cart_item.cost) %><p><br>
+		<%  end %>
+	<%  end %>
+
+	<p><%= @total_cost %></p>
+<div>

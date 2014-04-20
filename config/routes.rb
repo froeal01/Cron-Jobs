@@ -2,9 +2,11 @@ Market76::Application.routes.draw do
   devise_for :users
 
   resources :items
-  resources :order
 
-  post '/add_to_order/:item_id' => 'order#add_to_order', as: "add_to_order"
+  resources :orders 
+
+  resources :sub_orders
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

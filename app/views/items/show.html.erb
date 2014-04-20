@@ -3,5 +3,5 @@
 		<%=  @item.name %><br>
 		<%=  @item.description %><br>
 		<%=  "$#{@item.cost.to_f}"%><br>
-		<%=  link_to "Add to cart", add_to_order(@item.id) %>
+		<%=  link_to "Purchase", new_sub_order_path(item_id: @item.id) %>
 </div>
