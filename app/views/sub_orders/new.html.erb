@@ -6,7 +6,7 @@
 			<%=  form_for @sub_order do |f| %>
 			<%=  f.label :quantity %>
 			<%=  f.text_field :quantity%>
-			<%=  f.hidden_field :cost, :value => @sub_order_cost %>
+			<%=  f.hidden_field :cost, :value => @item.cost.round(2) %>
 	<p> Cost of Items <span>$<%=  @sub_order_cost %></span></p>
 			<%=  f.hidden_field :item_id, value: @item.id %>
 	    <%=  f.submit "Add Item to Cart" %>

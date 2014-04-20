@@ -8,10 +8,16 @@ class Order < ActiveRecord::Base
 
 
 	def sum_costs
-		@sub_orders = self.sub_orders
-		@sub_orders.sum(:cost)
+		summed_cost = self.sub_orders.sum(:cost)
+		self.total != summed_cost ? self.update_total_cost(summed_cost) : (return self.total)
 	end
 	
-	
+	def update_total_cost(new_cost)
+		self.total = new_cost
+		ActiveRecord::Base.transaction do
+			self.save!
+			return self.total
+		end
+	end
 
 end

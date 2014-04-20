@@ -3,8 +3,10 @@ Market76::Application.routes.draw do
 
   resources :items
 
-  resources :orders 
-
+  resources :orders do
+    resources :checkout
+  end
+  
   resources :sub_orders
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420012939) do
+ActiveRecord::Schema.define(version: 20140420165546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 20140420012939) do
   end
 
   create_table "orders", force: true do |t|
-    t.string "delivery_contact",           default: "", null: false
-    t.string "delivery_street",            default: "", null: false
-    t.string "delivery_city",              default: "", null: false
-    t.string "delivery_state",             default: "", null: false
-    t.string "delivery_zip",     limit: 5, default: "", null: false
+    t.string  "delivery_contact",           default: "", null: false
+    t.string  "delivery_street",            default: "", null: false
+    t.string  "delivery_city",              default: "", null: false
+    t.string  "delivery_state",             default: "", null: false
+    t.string  "delivery_zip",     limit: 5, default: "", null: false
+    t.integer "total",                      default: 0
   end
 
   create_table "reviews", force: true do |t|
