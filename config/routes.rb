@@ -4,11 +4,12 @@ Market76::Application.routes.draw do
   resources :items
 
   resources :orders do
-    resources :checkout
+    resources :checkouts
   end
   
   resources :sub_orders
   
+  get '/orders/:order_id/checkout' => "checkouts#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,17 @@
+<div class="container">
+
+ <%=  form_for @current_order do |f| %>
+ <%=  f.label :delivery_contact %>
+ <%=  f.text_field :delivery_contact %>
+ <%=  f.label :delivery_street %>
+ <%=  f.text_field :delivery_street %>
+ <%=  f.label :delivery_city %>
+ <%=  f.text_field :delivery_city %>
+ <%=  f.label :delivery_state %>
+ <%=  f.text_field :delivery_state %>
+ <%=  f.label :delivery_zip %>
+ <%=  f.text_field :delivery_zip %>
+ <%= f.hidden_field :total %>
+  <%=  f.submit "Complete Order" %>
+ <%  end %>
+</div>
