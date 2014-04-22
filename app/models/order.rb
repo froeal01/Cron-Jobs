@@ -6,7 +6,6 @@ class Order < ActiveRecord::Base
 
 
 
-
 	def sum_costs
 		summed_cost = self.sub_orders.sum(:cost)
 		self.total != summed_cost ? self.update_total_cost(summed_cost) : (return self.total)
@@ -19,5 +18,6 @@ class Order < ActiveRecord::Base
 			return self.total
 		end
 	end
+
 
 end

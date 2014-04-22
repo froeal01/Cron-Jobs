@@ -3,10 +3,15 @@ Market76::Application.routes.draw do
 
   resources :items
 
-  resources :orders do
-    resources :checkout
-  end
+
+
+
+  resources :orders 
   
+  get '/checkout/:token' => "checkouts#show", as: "checkout_confirmation"
+  get '/checkout' => "checkouts#new"
+  post '/checkout' => "checkouts#create"
+
   resources :sub_orders
   
   # The priority is based upon order of creation: first created -> highest priority.
