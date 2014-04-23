@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 #async_tasks
 gem 'sidekiq'
 gem 'whenever', :require => false
-
+gem 'sinatra'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

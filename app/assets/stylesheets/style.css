@@ -1,3 +1,51 @@
 .container{
 	height: 800px;
 }
+
+#intro_div{
+height: 550px;
+background:url('/assets/cow.jpeg') 50% 0 no-repeat fixed;
+background-size: 100%;	
+ -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#intro_writing{
+	height: auto; 
+  position: absolute; 
+  text-align: center; 
+  top: 400px;  
+  width: 100%;
+  z-index:1;
+  color: blue;
+  font-size: 3em;
+}
+
+#product_demo{
+	z-index: 1;
+	margin-top: 40px;
+}
+
+.uk-panel-box{
+	height: 100px;
+}
+
+.spacer{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+
+.item_show{
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 340px;
+}
+
+.purchase_spacer{
+  margin-top: 50px;
+  margin-left: 200px;
+}

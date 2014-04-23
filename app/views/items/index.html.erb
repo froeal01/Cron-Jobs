@@ -1,8 +1,11 @@
-<div class= "container">
-
+<div class= "uk-grid">
 	<% @items.each do |item| %>
-		<%=  item.name %>
+	<div class = "uk-width-medium-1-4 spacer">
+		<div class = "uk-panel uk-panel-box">
+		<h3 class = "uk-panel-title"><%=  item.name %></h3><br>
 		<%=  truncate("#{item.description}", length: 40) {link_to "Read More", item_path(item)} %><br>
+		</div>
+	</div>
 	<%  end %>
 
 </div>
