@@ -7,9 +7,8 @@ class PaymentGem
 		@amount = amount
 	end
 
-	def payment_saved?
+	def process_payment
 		begin
-			binding.pry
 		 new_charge = @gateway.create(card: @stripe_customer_token, amount: @amount, currency: "usd" )
 		 return new_charge
 	
