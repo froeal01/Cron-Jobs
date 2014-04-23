@@ -29,6 +29,17 @@ module Market76
         g.template_engine false
     end
 
+# config.autoload_paths += %W(#{config.root}/app/workers)
+# config.eager_load_paths += %W(#{config.root}/app/workers)
+
+ config.before_configuration do
+    env_file = File.join(Rails.root, 'config', 'mailer.yml')
+  YAML.load(File.open(env_file)).each do |key, value|
+    ENV[key.to_s] = value
+  end if File.exists?(env_file)
+end
+
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
@@ -38,3 +49,5 @@ module Market76
     # config.i18n.default_locale = :de
   end
 end
+
+
