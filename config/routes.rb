@@ -1,9 +1,10 @@
+require 'sidekiq/web'
 Market76::Application.routes.draw do
   devise_for :users
 
   resources :items
 
-
+  get "/" => "homes#index"
 
 
   resources :orders 
@@ -13,6 +14,9 @@ Market76::Application.routes.draw do
   post '/checkout' => "checkouts#create"
 
   resources :sub_orders
+
+
+  mount Sidekiq::Web, at: '/sidekiq'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

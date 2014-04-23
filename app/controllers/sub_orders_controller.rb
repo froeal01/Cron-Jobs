@@ -8,6 +8,7 @@ class SubOrdersController < ApplicationController
 
 	def create
 		if current_order
+			binding.pry
 			current_order.sub_orders << SubOrder.create(sub_order_params)
 		else
 			new_order	= Order.create
@@ -22,7 +23,7 @@ class SubOrdersController < ApplicationController
 	private 
 
 	def sub_order_params
-		params.require(:sub_order).permit(:cost, :quantity, :item_id)
+		params.require(:sub_order).permit(:cost, :quantity, :item_id, :sub_order_id)
 	end
 
 end

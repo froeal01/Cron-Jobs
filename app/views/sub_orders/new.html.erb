@@ -1,16 +1,22 @@
-<div class="container">
-
- <p><%=  @item.name %></p>
-	<p><%=  @item.cost.round(2) %></p>
-
+<div class="uk-grid">
+	<div class="uk-width-1-1 purchase_spacer">
+ <h2><%=  @item.name %></h2>
+ 		<div class="uk-form">
 			<%=  form_for @sub_order do |f| %>
-			<%=  f.label :quantity %>
-			<%=  f.text_field :quantity%>
+			<div class = "uk-form-row">
+				<%=  f.label :quantity %>
+				<%=  f.text_field :quantity%>
+		 </div>
 			<%=  f.hidden_field :cost, :value => @item.cost.round(2) %>
-	<p> Cost of Items <span>$<%=  @sub_order_cost %></span></p>
-			<%=  f.hidden_field :item_id, value: @item.id %>
-	    <%=  f.submit "Add Item to Cart" %>
-
+			<div class ="uk-form-row">
+				<p> Cost of Items <span>$<%=  @sub_order_cost %></span></p>
+						<%=  f.hidden_field :item_id, value: @item.id %>
+			</div>
+			<div class="uk-form-row">
+		   <%=  f.submit "Add Item to Cart", html:{class: "uk-button"} %>
+		  </div>
 	   <%  end %>
 
-</div>
+		</div> <!-- end form -->
+	</div> <!-- end width -->
+</div>  <!-- end grid -->

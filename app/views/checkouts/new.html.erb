@@ -1,5 +1,5 @@
-<div class="container">
-
+<div class="uk-grid">
+<div class="uk-form">
  <%=  form_for :order, html:{ id: "new_checkout"} do |f| %>
  <%=  f.label :delivery_contact %>
  <%=  f.text_field :delivery_contact %>
@@ -32,4 +32,5 @@
 				</div>	
   <%=  f.submit "Complete Order" %>
  <%  end %>
+</div>
 </div>

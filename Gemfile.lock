@@ -111,6 +111,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-protection (1.5.2)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -163,6 +165,10 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -218,6 +224,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   sidekiq
+  sinatra
   stripe
   turbolinks
   uglifier (>= 1.3.0)

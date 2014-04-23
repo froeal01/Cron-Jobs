@@ -1,7 +1,8 @@
-<div class= "container">
-
-		<%=  @item.name %><br>
+<div class= "uk-grid">
+	<div class= "uk-panel uk-panel-box uk-panel-box-secondary item_show">
+		<h2><%=  @item.name %></h2><br>
 		<%=  @item.description %><br>
-		<%=  "$#{@item.cost.to_f}"%><br>
-		<%=  link_to "Purchase", new_sub_order_path(item_id: @item.id) %>
+		<p class= "item_cost"><%=  "$#{@item.cost.to_f}"%><p><br>
+		<button class="uk-button"><%=  link_to "Purchase", new_sub_order_path(item_id: @item.id) %></button>
+	</div>
 </div>
