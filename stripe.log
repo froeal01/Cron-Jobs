@@ -1,3 +1,10 @@
 # Logfile created on 2014-04-22 20:14:03 -0400 by logger.rb/36483
 E, [2014-04-22T20:14:03.620535 #75077] ERROR -- : Stripe error You cannot use a Stripe token more than once: tok_103u252RIWuG3aexNahtT5u2
 E, [2014-04-22T20:40:56.687771 #75077] ERROR -- : Stripe error You cannot use a Stripe token more than once: tok_103u2V2RIWuG3aexxPSHDoWf
+E, [2014-04-23T16:56:55.314822 #80445] ERROR -- : Stripe error You cannot use a Stripe token more than once: tok_103uM82RIWuG3aex8EceQgYk
+E, [2014-04-23T17:26:42.205180 #80445] ERROR -- : Stripe error Amount must be at least 50 cents
+E, [2014-04-23T17:26:42.977655 #80445] ERROR -- : Stripe error Amount must be at least 50 cents
+E, [2014-04-23T17:28:42.729817 #80445] ERROR -- : Stripe error Amount must be at least 50 cents
+E, [2014-04-23T17:31:07.720415 #80445] ERROR -- : Stripe error Amount must be at least 50 cents
+E, [2014-04-23T17:33:49.143612 #80445] ERROR -- : Stripe error Amount must be at least 50 cents
+E, [2014-04-23T17:36:45.099738 #82507] ERROR -- : Stripe error Invalid integer: 14.0

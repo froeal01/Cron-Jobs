@@ -15,7 +15,6 @@ class PaymentGem
 			rescue Stripe::InvalidRequestError => e
 			logger = Logger.new("stripe.log")
 			logger.error "Stripe error #{e.message}"
-			errors.add :base, "There was an issue with your Credit Card."
 			false
 		end
 	end
