@@ -8,7 +8,6 @@ class SubOrdersController < ApplicationController
 
 	def create
 		if current_order
-			binding.pry
 			current_order.sub_orders << SubOrder.create(sub_order_params)
 		else
 			new_order	= Order.create
