@@ -8,10 +8,12 @@ class CheckoutsController < ApplicationController
 		 finished_order = PaymentGem.new(params[:order][:stripe_customer_token],current_order.total).process_payment
 		if finished_order
 			current_user.confirmation_email
+			current_order.set_check_out_date
+			session.delete(:order_id)
 			redirect_to checkout_confirmation_path(SecureRandom.urlsafe_base64)
 		else
-			flash[:error] = "Your payment was not processed at this time."
-			redirect_to :back
+			flash[:notice] = "Your payment was not processed at this time."
+			render "new"
 		end
 	end
 

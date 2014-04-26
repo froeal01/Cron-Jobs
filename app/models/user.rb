@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
 
   
 
+
   def confirmation_email
   	DairyMailer.delay.order_confirmation
   end
+
 end
