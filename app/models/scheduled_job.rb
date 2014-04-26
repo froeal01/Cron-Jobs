@@ -2,18 +2,11 @@ require 'sidekiq/api'
 
 class ScheduledJob < ActiveRecord::Base
 
-	def initialize(failure =nil, time = nil)
-		@failure = failure
-		@time = time
+	def initialize(failure, time)
+		@failure = failure || nil
+		@time = time || nil
 	end
 
-
-
-	def self.send_weekly_email
-		User.all.each do |user|
-			WeeklyEmailWorker.perform_async(user.email)
-		end 
-	end
 
 	def sidekiq_stats
 		summary = Hash.new

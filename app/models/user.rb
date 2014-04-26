@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
   	DairyMailer.delay.order_confirmation
   end
 
+ def self.send_weekly_email
+		User.all.each do |user|
+			WeeklyEmailWorker.perform_async(user.email)
+		end 
+	end
+
 end
