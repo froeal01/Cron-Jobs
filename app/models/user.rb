@@ -1,8 +1,14 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :async, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :user_orders
   has_many :orders, through: :user_orders
+
+  
+
+  def confirmation_email
+  	DairyMailer.delay.order_confirmation
+  end
 end
