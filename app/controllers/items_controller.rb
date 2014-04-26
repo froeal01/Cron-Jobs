@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
 	def show
 		@item = Item.find(params["id"])
+		@reviews = Review.find_all_by_reviewable_id(params["id"])
 	end
 
 end

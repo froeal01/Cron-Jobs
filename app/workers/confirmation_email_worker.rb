@@ -6,7 +6,7 @@ class ConfirmationEmailWorker
 
 	
 	sidekiq_retries_exhausted do |msg|
-     ScheduledJob.new("Failed #{msg['class']} with #{msg['args']}: #{msg['error_message']}",Time.now).log_error
+     ScheduledJob.create("Failed #{msg['class']} with #{msg['args']}: #{msg['error_message']}",Time.now)
   end
 
 		def perform

@@ -1,8 +1,36 @@
-<div class= "uk-grid">
-	<div class= "uk-panel uk-panel-box uk-panel-box-secondary item_show">
-		<h2><%=  @item.name %></h2><br>
-		<%=  @item.description %><br>
-		<p class= "item_cost"><%=  "$#{@item.cost.to_f}"%><p><br>
-		<button class="uk-button"><%=  link_to "Purchase", new_sub_order_path(item_id: @item.id) %></button>
+<div class= "uk-grid item">
+	<div class= "uk-width-small-1-1"> 
+		<div class= "uk-panel uk-panel-box uk-panel-box-secondary item_show">
+			<h2><%=  @item.name %></h2><br>
+			<%=  @item.description %><br>
+			<p class= "item_cost"><%=  "$#{@item.cost.to_f}"%><p><br>
+			<button class="uk-button"><%=  link_to "Purchase", new_sub_order_path(item_id: @item.id) %></button>
+			<button class= "uk-button review_create"><%= link_to "Add review", new_item_review_path(item_id: @item.id)%></button>
+		</div>
 	</div>
 </div>
+	<% if @reviews %>
+	<div class = "uk-grid">
+	<div class= "uk-width-small-1-1 reviews"> 
+		<%  @reviews.each do |review| %>
+			<div class = "uk-panel uk-panel-divider">
+					<%  case review.rating %>
+					<%  when (4.1..5) %>
+					<%=  "great" %>
+					<%  when (3.1..4) %>
+					<%=   %>
+					<%  when (2.1..3) %>
+					<%=   %>
+					<%  when (1.1..2) %>
+					<%=   %>
+					<%  else %>
+					<%=   %>
+					<%  end %>
+					<p><%=  review.comment %></p>
+				</div>
+			</div>
+		<%  end %>
+	<%  end %>
+</div>
+</div>
+

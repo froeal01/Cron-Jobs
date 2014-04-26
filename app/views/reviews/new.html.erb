@@ -1,0 +1,9 @@
+<h2>New Comment</h2>
+
+<%= form_for [@reviewable, Review.new] do |f| %>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

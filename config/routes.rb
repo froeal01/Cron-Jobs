@@ -2,7 +2,9 @@ require 'sidekiq/web'
 Market76::Application.routes.draw do
   devise_for :users
 
-  resources :items
+  resources :items do 
+    resources :reviews
+  end 
 
   get "/" => "homes#index"
 
@@ -14,7 +16,6 @@ Market76::Application.routes.draw do
   post '/checkout' => "checkouts#create"
 
   resources :sub_orders
-
 
   authenticate :user, lambda { |user| user.admin == true } do
     mount Sidekiq::Web => '/sidekiq'
