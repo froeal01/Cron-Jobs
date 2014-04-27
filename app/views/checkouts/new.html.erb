@@ -1,36 +1,46 @@
 <div class="uk-grid">
-<div class="uk-form">
- <%=  form_for :order, html:{ id: "new_checkout"} do |f| %>
- <%=  f.label :delivery_contact %>
- <%=  f.text_field :delivery_contact %>
- <%=  f.label :delivery_street %>
- <%=  f.text_field :delivery_street %>
- <%=  f.label :delivery_city %>
- <%=  f.text_field :delivery_city %>
- <%=  f.label :delivery_state %>
- <%=  f.text_field :delivery_state %>
- <%=  f.label :delivery_zip %>
- <%=  f.text_field :delivery_zip %>
-<%= f.hidden_field :stripe_customer_token %>
- <p> Enter Credit Card Info </p>
+<div class="uk-form spacer">
+ <%=  form_for :order, html:{ id: "new_checkout", name:"checkout_form"} do |f| %>
+	 <div class="uk-form-row">
+		 <h3><%=  f.label "Contact" %></h3>
+		 <p><%=  f.text_field :delivery_contact %></p><span class="errors"><span>
+	 </div>
+	 <div class="uk-form-row">	 
+		 <h3><%=  f.label "Street Address" %></h3>
+		 <p><%=  f.text_field :delivery_street, class: "uk-form-width-large" %></p><span class="errors"><span>
+	 </div>
+	 <div class="uk-form-row">
+		 <h3><%=  f.label "City" %></h3>
+		 <p><%=  f.text_field :delivery_city %></p><span class="errors"><span>
+	 </div>
+	 <div class="uk-form-row">
+		 <h3><%=  f.label "State" %></h3>
+		 <p><%=  f.text_field :delivery_state %></p><span class="errors"><span>
+	 </div>
+	 <div class="uk-form-row">
+		 <h3><%=  f.label "Zipcode" %></h3>
+		 <p><%=  f.text_field :delivery_zip %></p><span class="errors"><span>
+	 </div>
+	<%= f.hidden_field :stripe_customer_token %>
+ <h3> Enter Credit Card Info </h3>
  				<div class = "uk-form-row">
 					<%= label_tag :card_number, "Credit Card Number" %>
-					<%= text_field_tag :card_number, nil, name: nil %>
+					<%= text_field_tag :card_number, nil, name: nil %><span class="errors"><span>
 				</div>
 				<div class = "uk-form-row">
 					<%= label_tag :card_code, "Security Code" %>
-					<%= text_field_tag :card_code, nil, name: nil %>
+					<%= text_field_tag :card_code, nil, name: nil, class: "security_code_spacer" %><span class="errors"><span>
 				</div>
 				<div class = "uk-form-row">
 					<%= label_tag :card_month, "Credit Expiration"	 %>
-				   <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+				   <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "exp_spacer"} %>
 		      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
 				<div><br>
 				<div class = "uk-form-row">
 					<%=  label_tag :save_card, "Save Card Information" %>
 					<%=  check_box_tag "save_card", "yes" %>
 				</div>	
-  <%=  f.submit "Complete Order" %>
+  <p><%=  f.submit "Complete Order", class: "uk-button uk-button-success checkout_button" %></p>
  <%  end %>
 </div>
 </div>
