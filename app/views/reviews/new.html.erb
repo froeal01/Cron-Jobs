@@ -1,5 +1,7 @@
-<h2>New Comment</h2>
 
+
+<h2>New Comment</h2>
+<div id= "testing" class = "uk-form">
 <%= form_for [@reviewable, Review.new] do |f| %>
   <p>
     <%= f.label :comment %><br />
@@ -7,3 +9,4 @@
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>
+</div>

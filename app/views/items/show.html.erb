@@ -5,7 +5,7 @@
 			<%=  @item.description %><br>
 			<p class= "item_cost"><%=  "$#{@item.cost.to_f}"%><p><br>
 			<button class="uk-button"><%=  link_to "Purchase", new_sub_order_path(item_id: @item.id) %></button>
-			<button class= "uk-button review_create"><%= link_to "Add review", new_item_review_path(item_id: @item.id)%></button>
+			<button class= "uk-button"><%= link_to "Add review", new_item_review_path(item_id: @item.id), html:@item.id, class: "review_create"%></button>
 		</div>
 	</div>
 </div>

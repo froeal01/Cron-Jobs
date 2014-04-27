@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 			@items_in_order = current_order.sub_orders
 			@total_cost = current_order.sum_costs
 			@current_order = current_order
+			@total_quantity = current_order.total_quantity
 		else
 			flash[:notice] = "Nothing currently in your Cart"
 			redirect_to items_path

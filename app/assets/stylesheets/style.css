@@ -59,10 +59,26 @@ background-size: 100%;
   height: 400px;
 }
 
-.reviews{
-  
+.item-cost{
+  margin-top: 15px;
+}
+
+.cost{
+  margin-left: 18px;
+}
+
+.total_table{
+  margin-top: 10px !important;
 }
 .purchase_spacer{
   margin-top: 50px;
   margin-left: 200px;
+}
+
+.security_code_spacer{
+  margin-left: 37px;
+}
+
+.exp_spacer{
+  margin-left: 22px;
 }

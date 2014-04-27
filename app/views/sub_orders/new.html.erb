@@ -4,16 +4,16 @@
  		<div class="uk-form">
 			<%=  form_for @sub_order do |f| %>
 			<div class = "uk-form-row">
-				<%=  f.label :quantity %>
-				<%=  f.text_field :quantity%>
+						<%=  f.label :quantity %>
+			<%=  f.text_field :quantity%>
 		 </div>
 			<%=  f.hidden_field :cost, :value => @item.cost.round(2) %>
 			<div class ="uk-form-row">
-				<p> Cost of Items <span>$<%=  @sub_order_cost %></span></p>
+				<p class= "item-cost" data-cost=<%="#{@item.cost}" %>> Cost:  <span class="cost"> $<%=  @item.cost %> </span></p>
 						<%=  f.hidden_field :item_id, value: @item.id %>
 			</div>
 			<div class="uk-form-row">
-		   <%=  f.submit "Add Item to Cart", html:{class: "uk-button"} %>
+		   <%=  f.submit "Add Item to Cart", :class => "uk-button" %>
 		  </div>
 	   <%  end %>
 
