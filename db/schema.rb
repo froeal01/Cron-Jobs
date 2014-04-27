@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426012450) do
+ActiveRecord::Schema.define(version: 20140427214936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
 
   create_table "hourly_revenues", force: true do |t|
-    t.integer  "amout"
+    t.integer  "amount"
     t.datetime "hour"
   end
 

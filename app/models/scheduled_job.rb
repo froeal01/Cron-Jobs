@@ -4,11 +4,14 @@ class ScheduledJob < ActiveRecord::Base
 
 
 
+	def self.failed(message, time)
+		 new_job = ScheduledJob.new
+		 new_job.job_status = message
+		 new_job.completed_at = time
+		 ActiveRecord::Base.transaction do
+		 	new_job.save
+		 end
 
-	def sidekiq_stats
-		summary = Hash.new
-		stats = Sidekiq::Stats.new
-		summary = { processed: stats.processed, failed: stats.failed, enqueued: stats.enqueued, queues: stats.queues}
 	end
 
 end
