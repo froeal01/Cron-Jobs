@@ -1,7 +1,8 @@
 <div class= "uk-grid">
 	<% @items.each do |item| %>
-	<div class = "uk-width-medium-1-4 spacer">
-		<div class = "uk-panel uk-panel-box">
+	<div class = "uk-width-medium-1-4 item_spacer">
+		<div class = "uk-panel uk-panel-box uk-panel-box-secondary">
+			<div class = "uk-panel-teaser"><%=  image_tag(item.avatar, class: "item_index_picture" )%></div>
 		<h3 class = "uk-panel-title"><%=  item.name %></h3><br>
 		<%=  truncate("#{item.description}", length: 40) {link_to "Read More", item_path(item)} %><br>
 		</div>

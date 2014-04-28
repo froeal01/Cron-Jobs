@@ -11,6 +11,9 @@ $(function(){
 
 function getReviewForm(id) {
 	$.get('/items/'+ id + '/reviews/new', function(data){
-			
-		});
+		var form	= $(data).find('.uk-modal-dialog')
+		console.log(form)
+		$(".modal").html(form);
+		
+});
 }

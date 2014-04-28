@@ -48,6 +48,10 @@ background-size: 100%;
 	margin-left: 20px;
 }
 
+.item_spacer{
+  margin-top: 40px;
+  margin-left: 75px;
+}
 
 .item_show{
   width: 50%;
@@ -81,4 +85,13 @@ background-size: 100%;
 
 .exp_spacer{
   margin-left: 22px;
+}
+
+.item_index_picture{
+  height:30px;
+  width:150px;
+}
+
+.uk-panel{
+  height:auto;
 }
