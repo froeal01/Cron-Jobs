@@ -23,6 +23,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'sidekiq'
 gem 'whenever', :require => false
 gem 'sinatra'
+gem 'sidekiq-status'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

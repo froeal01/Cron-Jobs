@@ -10,13 +10,14 @@ class User < ActiveRecord::Base
 
 
   def confirmation_email
-  	DairyMailer.delay.order_confirmation
+  	job_id = DairyMailer.delay.order_confirmation
+     SidekiqStatusWorker.perform_async(job_id)
   end
 
- def self.send_weekly_email
+  def self.send_weekly_email
 		User.all.each do |user|
-			WeeklyEmailWorker.perform_async(user.email)
+  	   WeeklyEmailWorker.perform_async(user.email)
 		end 
-	end
+  end
 
 end
