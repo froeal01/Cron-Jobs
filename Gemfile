@@ -25,6 +25,9 @@ gem 'whenever', :require => false
 gem 'sinatra'
 gem 'sidekiq-status'
 
+# image loader
+gem 'carrierwave'
+gem "mini_magick"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

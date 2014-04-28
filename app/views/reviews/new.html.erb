@@ -1,12 +1,19 @@
 
 
-<h2>New Comment</h2>
-<div id= "testing" class = "uk-form">
-<%= form_for [@reviewable, Review.new] do |f| %>
-  <p>
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
-</div>
+
+		<h2 class ="item_spacer">New Comment</h2>
+			<div class="uk-form item_spacer">
+			<%= form_for [@reviewable, Review.new] do |f| %>
+				<div class = "uk-form-row">
+			    <%= f.label :comment %>
+			   <p> <%= f.text_area :comment %></p>
+			  </div>
+			  <div class = "uk-form-row">
+			  	<%= f.label :rating %>
+			  	<%=  f.select :rating, options_for_select([["5 Stars", 5], ["4 Stars", 4], ["3 Stars", 3], ["2 Stars", 2], ["1 Star", 1]])%>
+			  </div>
+			  <div class = "uk-form-row">
+			  	<p><%= f.submit "Submit", class: "uk-button" %></p>
+				</div>
+			<% end %>
+		</div>
