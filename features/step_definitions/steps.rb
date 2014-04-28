@@ -1,23 +1,28 @@
+def valid_user
+	@user ||= FactoryGirl.create(:user)
+end
+
+
+
 Given(/^I am on the home page$/) do
   visit('/')
 end
 
-Given(/^I am not signed in$/) do
+And(/^I am not signed in$/) do
   page.has_content?('LogIn')
 end
 
-Given(/^I click on (.*)$/) do |arg1|
-	click_link "#{arg1}"
+And(/^I click on (.*)$/) do |arg1|
+	click_link_or_button("#{arg1}")
 end
 
-Given(/^I view the signin page$/) do
- 
+
+And(/^I fill in the (.*) and (.*) with valid information$/) do |arg1, arg2|
+  valid_user
+  fill_in "#{arg1}", with: @user.email
+	fill_in	"#{arg2}", with: @user.password
 end
 
-When(/^I fill in valid information$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see welcome$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see (.*)$/) do |arg1|
+  page.has_content?("#{arg1}")
 end

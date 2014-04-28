@@ -7,7 +7,6 @@ Feature: Sigining In
  Scenario: Sign in from the root page
   Given I am on the home page
   And I am not signed in
-  And I click on Login
-  And I view the signin page
-  When I fill in valid information 
-  Then I should see welcome
+  And I click on Sign In
+  And I fill in the user_email and user_password with valid information
+  Then I should see "Signed in successfully"

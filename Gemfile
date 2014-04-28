@@ -66,6 +66,7 @@ group :development, :test do
 	gem 'cucumber-rails', require: false
 	gem 'database_cleaner'
 	gem 'debugger'
+	gem 'stripe-ruby-mock', '~> 1.10.1.7'
 end
 
 gem 'devise'

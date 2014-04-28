@@ -1,0 +1,25 @@
+<h2 class="sign_in_spacer">Sign up</h2>
+
+
+<div class= "uk-form sign_in_spacer">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<div class="uk-form-row">
+ 	<%= f.label :email %>
+ <p> <%= f.email_field :email, autofocus: true %></p>
+</div>
+<div class="uk-form-row">
+  	<%= f.label :password %>
+    <p><%= f.password_field :password, autocomplete: "off" %></p>
+</div>
+<div class="uk-form-row">
+  <%= f.label :password_confirmation %>
+   <p> <%= f.password_field :password_confirmation, autocomplete: "off" %></p>
+</div>
+	<div class="uk-form-row">
+  	<%= f.submit "Sign up", class: "uk-button" %>
+  </div>
+<% end %>
+</div>
+
+<div class= "sign_in_spacer"><%= render "devise/shared/links" %></div>

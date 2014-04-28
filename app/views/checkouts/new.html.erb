@@ -23,6 +23,7 @@
 	 </div>
 	<%= f.hidden_field :stripe_customer_token %>
  <h3> Enter Credit Card Info </h3>
+ 				<div id ="stripe_error"></div>
  				<div class = "uk-form-row">
 					<%= label_tag :card_number, "Credit Card Number" %>
 					<%= text_field_tag :card_number, nil, name: nil %><span class="errors"><span>

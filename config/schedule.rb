@@ -11,7 +11,7 @@ set :output, { :standard => "../log/cron_log.log", :error => "../log/cron_log_er
 
 
 every :sunday, at: '11pm' do
-  runner "ScheduledJob.send_weekly_email", :environment => :development
+  runner "User.send_weekly_email", :environment => :development
 end
 
 every :Monday, at: "12am" do 
@@ -20,6 +20,10 @@ end
 
 every 1.hour do 
 	rake "total:hourly"
+end
+
+every :Monday, at: "9am" do 
+	command "rm -rf ./temp/cache"
 end
 
 # every 4.days do

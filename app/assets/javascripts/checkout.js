@@ -27,10 +27,8 @@ $(function(){
  		if (response.error)
  			{
  				var originalColor = $('#stripe_error').css('background')
- 				$('#stripe_error').text(response.error.message).show();
- 				$('#stripe_error').animate({backgroundColor: "#FFFF00"}, 1000, function(){
- 					$(this).animate({backgroundColor: originalColor}, 1000);
- 				});
+ 				$('#stripe_error').text(response.error.message);
+ 				$('#card_number').addClass("uk-form-danger");
   			$('input[type=submit]').attr('disabled', false);
  		// alert(response.error.message);
 

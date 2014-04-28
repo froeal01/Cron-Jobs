@@ -1,4 +1,5 @@
 class CheckoutsController < ApplicationController
+	before_filter :require_login
 
 	def new
 	  @current_order	= current_order
@@ -24,5 +25,16 @@ class CheckoutsController < ApplicationController
 	def show
 		@id = params[:token]
 	end
+
+	private
+
+	def require_login
+		if current_user
+			return current_user
+		else
+			redirect_to '/users/sign_in'
+		end
+	end
+
 
 end

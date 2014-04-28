@@ -53,6 +53,10 @@ background-size: 100%;
   margin-left: 75px;
 }
 
+.sign_in_spacer{
+  margin-top: 40px;
+  margin-left: 500px;
+}
 .item_show{
   width: 50%;
   margin-top: 50px;
@@ -94,4 +98,13 @@ background-size: 100%;
 
 .uk-panel{
   height:auto;
+}
+
+.review_image{
+  height: 20px;
+  width: 50px;
+}
+
+#stripe_error{
+  color: red;
 }

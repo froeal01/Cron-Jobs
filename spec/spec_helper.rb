@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'sidekiq/testing'
+require 'stripe_mock'
 
 Sidekiq::Testing.fake!
 # Requires supporting ruby files with custom matchers and macros, etc,
