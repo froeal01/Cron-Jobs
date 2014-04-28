@@ -1,5 +1,6 @@
 module ApplicationHelper
-
+	
+	
 	def find_reviewable
 		params.each do |name, value|
 			if name =~ /(.+)_id$/
@@ -8,6 +9,7 @@ module ApplicationHelper
 		end
 		nil
 	end
+
 
 
 end
