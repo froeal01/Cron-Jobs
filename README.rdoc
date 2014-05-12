@@ -2,4 +2,4 @@
 
 -Scheduling cron-jobs with whenever, sidekiq, & reddis
 
-- Database stores outcome of jobs, with id to allow for further review
+-Database stores outcome of jobs- with id to allow for further review
